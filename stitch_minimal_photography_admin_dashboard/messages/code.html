@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messages - The Gallery Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#006259",
+                        "on-tertiary-fixed": "#004e47",
+                        "outline-variant": "#a9b4b9",
+                        "error": "#9f403d",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-error": "#fff7f6",
+                        "on-error-container": "#752121",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-tint": "#545f73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed-dim": "#83efe1",
+                        "surface-container": "#e8eff3",
+                        "primary-fixed-dim": "#cad5ed",
+                        "primary-container": "#d8e3fb",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#e1e9ee",
+                        "primary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#314055",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-dim": "#cfdce3",
+                        "primary-dim": "#485367",
+                        "tertiary-dim": "#005e56",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-secondary": "#f7f9ff",
+                        "on-primary-container": "#475266",
+                        "outline": "#717c82",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#e2fff9",
+                        "tertiary-container": "#91feef",
+                        "secondary": "#506076",
+                        "inverse-primary": "#dae6fe",
+                        "tertiary": "#006b62",
+                        "on-primary": "#f6f7ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#006d64",
+                        "on-surface-variant": "#566166",
+                        "on-primary-fixed": "#354053",
+                        "tertiary-fixed": "#91feef",
+                        "error-container": "#fe8983",
+                        "secondary-dim": "#44546a",
+                        "on-surface": "#2a3439",
+                        "inverse-surface": "#0b0f10",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d3e4fe",
+                        "on-background": "#2a3439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen w-[280px] z-50 bg-surface-container-low text-on-surface-variant flex-col py-8 pl-6 pr-0 no-shadows tonal-shift-bg">
+<div class="mb-10 pl-4">
+<h1 class="font-headline font-extrabold text-lg text-on-surface tracking-tight">The Gallery Curator</h1>
+<p class="font-body text-xs text-on-surface-variant mt-1">Admin Terminal</p>
+</div>
+<button class="mb-8 mr-6 bg-gradient-to-b from-primary to-primary-dim text-on-primary rounded-md py-2.5 px-4 font-label text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+            Upload New Work
+        </button>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                        Overview
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+                        Portfolio
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+                        Client Galleries
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-lowest text-on-surface rounded-l-full relative before:content-[''] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-primary before:rounded-r-full transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+                        Messages
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                        Payments
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+                        Content
+                    </a>
+</li>
+</ul>
+</div>
+<div class="mt-auto pr-6">
+<ul class="space-y-1 pt-4 border-t border-outline-variant/15">
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                        Help Center
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-l-full text-on-surface-variant hover:bg-surface-variant/40 transition-all duration-300 ease-in-out font-label font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                        Sign Out
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-[280px] h-screen flex flex-col relative bg-surface">
+<!-- TopNavBar (Shared Component) -->
+<header class="h-16 px-8 flex justify-between items-center bg-surface-container-lowest/80 backdrop-blur-md z-40 sticky top-0 shadow-none border-b border-outline-variant/10">
+<div class="flex items-center w-1/3">
+<!-- Search bar on left as requested -->
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body text-sm rounded-md pl-10 pr-4 py-1.5 border border-outline-variant/20 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors" placeholder="Search messages..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20 ml-2">
+<img alt="Photographer Profile" class="w-full h-full object-cover" data-alt="close-up portrait of young woman with neutral expression, soft natural lighting, studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKpTMM6AOyWs2uRA_ZbQ75XgVlynxadHGxwh42HusZry8I3YelhyMZPFjY8x5vKefgUEoWMdUfgBxZWahcNoiIGXARhft88K5rZYDcgfAIwEqOMBU6vNmtZ9lj8ypZtGCkO6ChOhgqRwqq3KxcmAtsS42JKE7y2f6D9dsnZMolxZrsgVqlxkhhD3VPxZl2oFQwLFrpYVDVGWZS2Dke_sJ7d1yAYGMBlj0rscXM98KRxipD3_FvZwaZHYu39ymnCGefEQoEY6_N2CY"/>
+</div>
+</div>
+</header>
+<!-- Messages Layout: List & Detail View -->
+<div class="flex-1 flex overflow-hidden p-6 gap-6">
+<!-- Message List Sidebar -->
+<div class="w-1/3 min-w-[320px] max-w-[400px] bg-surface-container-low rounded-xl flex flex-col overflow-hidden">
+<div class="px-6 py-5 flex justify-between items-center border-b border-outline-variant/15">
+<h2 class="font-headline font-bold text-xl text-on-surface tracking-tight">Inbox</h2>
+<span class="bg-primary-container text-on-primary-container font-label text-xs font-semibold px-2 py-0.5 rounded-full">3 New</span>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Unread Message (Active) -->
+<div class="p-5 cursor-pointer bg-surface-container-lowest relative group">
+<!-- Active Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<h3 class="font-headline font-bold text-base text-on-surface">Eleanor Vance</h3>
+</div>
+<span class="font-body text-xs text-on-surface-variant">10:42 AM</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-2">eleanor.v@example.com</p>
+<p class="font-body text-sm text-on-surface line-clamp-2 pr-4">Regarding the autumn editorial shoot, we'd like to push the timeline back by two weeks. Would that still work for your schedule?</p>
+</div>
+<!-- Read Message -->
+<div class="p-5 cursor-pointer hover:bg-surface-container-lowest/50 transition-colors border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-medium text-base text-on-surface-variant">Marcus Reed</h3>
+<span class="font-body text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-2">m.reed.studio@creative.net</p>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2 pr-4">The final gallery looks incredible. The lighting in the third set really captures the mood we were hoping for.</p>
+</div>
+<!-- Read Message -->
+<div class="p-5 cursor-pointer hover:bg-surface-container-lowest/50 transition-colors border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-medium text-base text-on-surface-variant">Sarah Chen</h3>
+<span class="font-body text-xs text-on-surface-variant">Oct 12</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant mb-2">sarah@chenweddings.com</p>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2 pr-4">Can you send over the high-res files for the cover spread? We need them for the printers by Thursday.</p>
+</div>
+</div>
+</div>
+<!-- Message Detail View -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl flex flex-col overflow-hidden relative">
+<!-- Detail Header -->
+<div class="px-8 py-6 border-b border-outline-variant/15 flex justify-between items-start bg-surface-container-lowest/80 backdrop-blur-md sticky top-0 z-10">
+<div>
+<h2 class="font-headline font-bold text-2xl text-on-surface mb-2">Autumn Editorial Shoot Timeline Adjustments</h2>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary font-headline font-bold">EV</div>
+<div>
+<p class="font-body font-medium text-sm text-on-surface">Eleanor Vance</p>
+<p class="font-label text-xs text-on-surface-variant">eleanor.v@example.com • Oct 14, 2023, 10:42 AM</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-md hover:bg-surface-container-low" title="Mark as Unread">
+<span class="material-symbols-outlined">mark_email_unread</span>
+</button>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center justify-center w-10 h-10 rounded-md hover:bg-error-container/20" title="Delete">
+<span class="material-symbols-outlined">delete</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface hover:bg-surface-variant px-4 py-2 rounded-md font-label text-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">reply</span>
+                            Reply
+                        </button>
+</div>
+</div>
+<!-- Message Body -->
+<div class="p-8 flex-1 overflow-y-auto font-body text-sm text-on-surface leading-relaxed max-w-3xl">
+<p class="mb-4">Hi there,</p>
+<p class="mb-4">I hope this email finds you well.</p>
+<p class="mb-4">Regarding the autumn editorial shoot we've been planning, we are looking at pushing the timeline back by roughly two weeks due to some delays with the wardrobe arriving from Milan. We're now targeting the week of November 6th.</p>
+<p class="mb-4">Would that still work for your schedule? We understand this is a busy season, so please let us know if this causes any major conflicts. The location (the old glasshouse) is still secured for those dates.</p>
+<p class="mb-6">Looking forward to hearing from you.</p>
+<p class="mb-1">Best regards,</p>
+<p class="font-medium text-on-surface">Eleanor Vance</p>
+<p class="text-xs text-on-surface-variant">Creative Director | Studio Vance</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

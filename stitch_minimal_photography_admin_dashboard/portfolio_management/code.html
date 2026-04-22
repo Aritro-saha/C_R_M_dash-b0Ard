@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Gallery Curator - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#006259",
+                        "on-tertiary-fixed": "#004e47",
+                        "outline-variant": "#a9b4b9",
+                        "error": "#9f403d",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-error": "#fff7f6",
+                        "on-error-container": "#752121",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-tint": "#545f73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed-dim": "#83efe1",
+                        "surface-container": "#e8eff3",
+                        "primary-fixed-dim": "#cad5ed",
+                        "primary-container": "#d8e3fb",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#e1e9ee",
+                        "primary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#314055",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-dim": "#cfdce3",
+                        "primary-dim": "#485367",
+                        "tertiary-dim": "#005e56",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-secondary": "#f7f9ff",
+                        "on-primary-container": "#475266",
+                        "outline": "#717c82",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#e2fff9",
+                        "tertiary-container": "#91feef",
+                        "secondary": "#506076",
+                        "inverse-primary": "#dae6fe",
+                        "tertiary": "#006b62",
+                        "on-primary": "#f6f7ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#006d64",
+                        "on-surface-variant": "#566166",
+                        "on-primary-fixed": "#354053",
+                        "tertiary-fixed": "#91feef",
+                        "error-container": "#fe8983",
+                        "secondary-dim": "#44546a",
+                        "on-surface": "#2a3439",
+                        "inverse-surface": "#0b0f10",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d3e4fe",
+                        "on-background": "#2a3439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #2a3439; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        /* Tonal shift instead of borders */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex h-screen overflow-hidden selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-8 pl-6 pr-0 fixed left-0 top-0 h-screen w-[280px] z-50 bg-surface-container-low text-slate-700 transition-all duration-300 ease-in-out">
+<!-- Header -->
+<div class="mb-10 px-4">
+<div class="flex items-center gap-3 mb-2">
+<img alt="Studio Logo" class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="minimalist photography studio logo with geometric shapes on stark white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWfKcjVIvJZ_WAHZXxVdwarirR5oODAlwxAHT31shU3XypZpkbMtVcTeN7rYdLsauF7MIxprZoPIO1E3d_YZBCP6GULz91jeCe2pDRKxdIvBNn6jtU6PT3JaqfLZ0n8udIS1eRD_oHIUGlLAMdORmKE5On7d2RNXhpvU8-7BlWjS6230boWf7XRi3xoEHJd-gAhNuBKHz3U456gKb42wZgaGW39N0tORmOhmxNu5MeZDZIvyvBUPoo2_Djd6hEorT65fcOcA-uJM"/>
+<div>
+<h1 class="font-headline font-extrabold text-lg text-slate-800 tracking-tight leading-tight">The Gallery Curator</h1>
+<p class="font-body text-xs text-on-surface-variant">Admin Terminal</p>
+</div>
+</div>
+<button class="mt-6 w-[calc(100%-1rem)] bg-gradient-to-b from-primary to-primary-dim text-on-primary hover:from-primary-dim hover:to-primary rounded-xl py-3 px-4 font-body font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">upload</span>
+                Upload New Work
+            </button>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto no-scrollbar space-y-1">
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">dashboard</span>
+                Overview
+            </a>
+<!-- Active State -->
+<a class="flex items-center gap-4 px-4 py-3 bg-white text-slate-900 rounded-l-full relative before:content-[''] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-slate-500 before:rounded-r-full font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+                Portfolio
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">groups</span>
+                Client Galleries
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">chat_bubble</span>
+                Messages
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">payments</span>
+                Payments
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">edit_note</span>
+                Content
+            </a>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-auto pt-6 space-y-1">
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-l-full text-slate-500 hover:text-slate-700 hover:bg-white/40 font-headline font-medium tracking-wide text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px]">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[280px] h-screen overflow-y-auto relative bg-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 bg-white/80 backdrop-blur-md shadow-sm flex justify-between items-center h-16 px-8 transition-all">
+<!-- Mobile Brand/Menu (Visible only on small screens) -->
+<div class="flex items-center gap-4 md:hidden">
+<button class="text-slate-600 hover:bg-slate-100/50 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline font-bold text-xl tracking-tighter text-slate-800">The Editorial Eye</span>
+</div>
+<!-- Left Actions (Search) -->
+<div class="hidden md:flex items-center flex-1 max-w-md">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/20 focus:border-primary focus:ring-0 text-on-surface text-sm rounded-xl py-2 pl-10 pr-4 placeholder:text-outline-variant transition-all font-body" placeholder="Search portfolio..." type="text"/>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-2">
+<button class="text-slate-600 hover:bg-slate-100/50 p-2 rounded-full transition-colors scale-95 active:scale-90 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full border border-white"></span>
+</button>
+<button class="text-slate-600 hover:bg-slate-100/50 p-2 rounded-full transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2 hidden md:block"></div>
+<button class="w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-primary-container transition-all scale-95 active:scale-90">
+<img alt="Photographer Profile" class="w-full h-full object-cover" data-alt="headshot of young professional photographer looking confidently at camera in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFEZ3C6IVph9UdP3me3mMohs48P94gTivPhvn8QjzGhcrJsmX_VbvYkIMlkSakD2H6qJnom6Ws_LfF8KaSSMcA43vTyirM6YjWisJZD_VpFT5JAR_4Cdt5wiPjjNEP5hMb_WlJD_NZPYX9UBlJWIpiyVIyKxrP6ShOUkJZG69j_lYSXHhOAVZakwjo55CKd53qD-85izuaPUPk8qlN0q-ffTLra97dHXrd0CW5nSiJMZuJFaUvVECziQ0F3rOx18VU_0WkZBuFBYc"/>
+</button>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto min-h-full">
+<!-- Page Header & Filters -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight mb-2">Portfolio Workspace</h2>
+<p class="font-body text-sm text-on-surface-variant">Manage and curate your public galleries.</p>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 md:pb-0">
+<button class="px-4 py-2 rounded-xl text-sm font-medium transition-colors bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/10">All Work</button>
+<button class="px-4 py-2 rounded-xl text-sm font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest whitespace-nowrap">Wedding</button>
+<button class="px-4 py-2 rounded-xl text-sm font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest whitespace-nowrap">Events</button>
+<button class="px-4 py-2 rounded-xl text-sm font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest whitespace-nowrap">Portrait</button>
+<button class="px-4 py-2 rounded-xl text-sm font-medium transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest whitespace-nowrap">Commercial</button>
+</div>
+</div>
+<!-- Image Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Grid Item 1 (Large) -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest md:col-span-2 md:row-span-2">
+<img alt="Wedding Couple" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="elegant wedding couple embracing in a sunlit historic courtyard with soft warm glowing light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoZes0jZw77G33ziwmjjqTTIe2yPn5gLCzNvKUsDFkV3PKAEa7lq2h1qatk6msV7RJNOOmwekyuEUsbXtrx70qfSmY9Hj7WOMFZdgyZHE7-ujUoJ2r09aINy9RdQumJP6PMVp1hx2IQSU2-_awyI8SuQ3ItbwpxReT0wuoMHRy67E0vTDYizQaM88WRZfsYB_wCSbTtnJ0NBU5rP8DbPq67p4CxJq50uoGVVJPwqrH4jrSSKBxPc7tWrUfRmF8eTvrZsTOYuQ1dOM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<!-- Hover Actions -->
+<div class="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface flex items-center justify-center hover:bg-surface-container-lowest hover:text-primary transition-colors shadow-sm" title="Reorder">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-error flex items-center justify-center hover:bg-error-container hover:text-on-error-container transition-colors shadow-sm" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 text-white">
+<span class="text-xs font-body uppercase tracking-wider bg-black/40 px-2 py-1 rounded backdrop-blur-sm mb-1 inline-block">Wedding</span>
+<h3 class="font-headline font-semibold text-lg">The Amalfi Coast Elopement</h3>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+<img alt="Event Concert" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dynamic concert photography capturing artist in silhouette against bright purple and blue stage lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_9IWsjUx-21T9WU9GPkyX5ZdEDsMiU14AKIZSKt-wb1YHG8hACk1kKsjFL9PG1ewXC7Vmn-qxnR4d78QkQ3W3qXEXZeMXvTezlTfx3Gpw51IrHx6Qwp5Ix3wmprYDPW_9XM6e-ufqggWCli7A4JqIO0t6SDh1k2GaW2LCt3jmD8dE_fQbDG13FjMuS2zY2LNPenV9SCDuHCTAvZAV6c7Ub1fJl1W4YYv8UKeowmWkciYKemeFl8x0gignVMKckJYjyQgf67SSwek"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-error flex items-center justify-center hover:bg-error-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+<img alt="Portrait Woman" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="striking studio portrait of woman with dramatic chiaroscuro lighting and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDplHOStFOsV0Fmoew3Z8Qbl6RUZug3EWYwBfnkOoR9Rg9x03VxrfNaP09SVS-m8MwiFxtjbkQqPus_umqxbf76Z-fvLuRoOJO0vm7izIkT-ZktLFOAsdD2CyHXVxn9b5OCFxA75osTDTFJBPhHg1bKDN8913aOUoJwrHbCApbuT0Cn4LknIqxTUv-RXMVBIrt7M7KzcqKKGGLnysSx60a8kpU09I-i0g7EZ2HR2Dlah0lTglaslVB92GhJZWAObjXdCtGcRo_NSbY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-error flex items-center justify-center hover:bg-error-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Grid Item 4 (Wide) -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest md:col-span-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+<img alt="Commercial Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="clean modern architectural interior with minimal furniture and strong geometric shadows from large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWsTGazz3R-syQkn5fBG0QCIdJG--iuNJ_DOcnXGhb6h8IATtbzkNU8ME-CXC4L5btvlxY1Qad6tz7FVqvG6mRbUSBz1dXGcP5tWgHlwgpNLjIBtqslKw9fRoEhH6VdfWO-sC8ZkfZog9tlD5HbDzkc98aNwfgwWnszei4__6zPqB5uV2Gc3xWyX-P7cG3hwQ-ogeiecYgOfHdP_vHs4l0cPQV5G3JqpG3yJUQHOlN-CG5gH1xLrYHMaqYviQzkFzaVe3BrxbN60"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur text-error flex items-center justify-center hover:bg-error-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Grid Item 5 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+<div class="w-full h-full flex flex-col items-center justify-center bg-surface-container-low border border-dashed border-outline-variant/40 hover:bg-surface-container transition-colors cursor-pointer text-center p-6">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">add_photo_alternate</span>
+<span class="font-headline font-medium text-on-surface">Add New Project</span>
+<span class="font-body text-xs text-on-surface-variant mt-1">Drag and drop images here</span>
+</div>
+</div>
+</div>
+<!-- Empty Space at bottom for scrolling clearance -->
+<div class="h-24"></div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Gallery Curator - Client Galleries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#006259",
+                        "on-tertiary-fixed": "#004e47",
+                        "outline-variant": "#a9b4b9",
+                        "error": "#9f403d",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-error": "#fff7f6",
+                        "on-error-container": "#752121",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-tint": "#545f73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed-dim": "#83efe1",
+                        "surface-container": "#e8eff3",
+                        "primary-fixed-dim": "#cad5ed",
+                        "primary-container": "#d8e3fb",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#e1e9ee",
+                        "primary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#314055",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-dim": "#cfdce3",
+                        "primary-dim": "#485367",
+                        "tertiary-dim": "#005e56",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-secondary": "#f7f9ff",
+                        "on-primary-container": "#475266",
+                        "outline": "#717c82",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#e2fff9",
+                        "tertiary-container": "#91feef",
+                        "secondary": "#506076",
+                        "inverse-primary": "#dae6fe",
+                        "tertiary": "#006b62",
+                        "on-primary": "#f6f7ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#006d64",
+                        "on-surface-variant": "#566166",
+                        "on-primary-fixed": "#354053",
+                        "tertiary-fixed": "#91feef",
+                        "error-container": "#fe8983",
+                        "secondary-dim": "#44546a",
+                        "on-surface": "#2a3439",
+                        "inverse-surface": "#0b0f10",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d3e4fe",
+                        "on-background": "#2a3439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-low text-slate-700 dark:text-slate-300 font-['Manrope'] font-medium tracking-wide text-sm fixed left-0 top-0 h-screen w-[280px] z-50 flex-col py-8 pl-6 pr-0 no-shadows">
+<div class="mb-10 pr-6">
+<h1 class="font-['Manrope'] font-extrabold text-lg text-slate-800 dark:text-slate-100">The Gallery Curator</h1>
+<p class="text-xs text-on-surface-variant mt-1">Admin Terminal</p>
+</div>
+<button class="mb-8 mr-6 bg-gradient-to-b from-primary to-primary-dim text-on-primary rounded-xl py-3 px-4 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">upload</span>
+            Upload New Work
+        </button>
+<ul class="flex-1 space-y-2">
+<li>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-l-full" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-l-full" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+                    Portfolio
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-3 px-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-l-full relative before:content-[''] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-slate-500 before:rounded-r-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+                    Client Galleries
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-l-full" href="#">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                    Messages
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-l-full" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                    Payments
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-l-full" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+                    Content
+                </a>
+</li>
+</ul>
+<div class="mt-auto pr-6 space-y-2">
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/40 dark:hover:bg-slate-900/40 transition-all duration-300 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-[280px] min-h-screen pt-24 px-8 pb-12">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-600 dark:text-slate-400 font-['Inter'] text-sm tracking-tight fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 shadow-sm dark:shadow-none flex justify-between items-center h-16 px-8">
+<div class="flex items-center gap-4">
+<h2 class="font-['Manrope'] font-bold text-xl tracking-tighter text-slate-800 dark:text-slate-100 hidden md:block">The Editorial Eye</h2>
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="bg-surface-container-lowest border border-outline-variant/20 focus:border-primary focus:border-opacity-100 rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-0 transition-colors w-64" placeholder="Search galleries..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-variant border border-outline-variant/20 ml-2">
+<img alt="Photographer Profile" class="h-full w-full object-cover" data-alt="Close up portrait of a professional photographer looking focused with soft natural lighting and a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEFShWFKiB-9PbL0vOAgTAAOS9VNFFbEuc7oWM_liWnQOPvC4r0m8EShsrh5O2GlYNFk_8tWhUGVIORaGLspUJ6ML7muvFbYmhS6YT2GEh8O30Znbqux4arq3J4Z7yixZCrPh8bADHB3Ejh3qRupmnEsTRDPjZk5651_VQ5_vuMGCxL5f-G51jcBPfZ2bLM8OJFHNkE-QfhuI51HI-sMfGm7DU_ekleHlSr3DAw6uGzk_4RFVrauqntWTQlroe7bxqdFP-O0Teebw"/>
+</div>
+</div>
+</header>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Client Galleries</h1>
+<p class="text-on-surface-variant text-sm">Manage and share your curated collections.</p>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl flex overflow-hidden p-1">
+<button class="px-4 py-2 bg-surface-container-low text-on-surface rounded-lg text-sm font-medium transition-colors">Grid</button>
+<button class="px-4 py-2 text-on-surface-variant hover:text-on-surface rounded-lg text-sm font-medium transition-colors">List</button>
+</div>
+<button class="bg-gradient-to-b from-primary to-primary-dim text-on-primary rounded-xl py-2 px-6 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity ml-auto md:ml-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create New Gallery
+                </button>
+</div>
+</div>
+<!-- Galleries Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Gallery Card 1 -->
+<article class="bg-surface-container-lowest rounded-[1rem] overflow-hidden group hover:shadow-lg transition-all duration-300 ring-1 ring-black/5 dark:ring-white/10">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container-low">
+<img alt="The Miller Wedding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]" data-alt="Elegant outdoor wedding reception with string lights, rustic wooden tables, and soft evening twilight atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb5Mv6wFfOaSehvB3DpbB327f6Vi4UAWetuFicn2cI2SbhdTotHJa0Txv8QLLkssMhvrmYnS58v_ZXXxZJXF6bt4tt1bfXXQz4QDMo2rcELIdcnsIPPAmKvvKAHzP6_486TViTNSkO0s5pvIMfVGtbITVgLp49MBZc1rGJDoL48ttglRUL-z3Q6PH5t4vYAXpZyyfc8q2bpN6r8vwlKb5v3UrpxKvDLbH4ENAp-pRHny1CAiuFQkP4qvMxRjpq7tGnm9S3TWzpOdo"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-tertiary flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+                        Active
+                    </div>
+<button class="absolute top-4 right-4 bg-black/20 hover:bg-black/40 backdrop-blur-md text-white p-2 rounded-full transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate">The Miller Wedding</h3>
+</div>
+<div class="flex items-center gap-4 text-xs text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">photo_library</span> 245 Photos</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Expires in 14 days</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest text-on-surface rounded-lg py-2 text-sm font-medium hover:bg-surface-variant transition-colors">View</button>
+<button class="flex-1 bg-transparent text-primary border border-outline-variant/30 rounded-lg py-2 text-sm font-medium hover:bg-surface-container-low transition-colors">Share</button>
+</div>
+</div>
+</article>
+<!-- Gallery Card 2 -->
+<article class="bg-surface-container-lowest rounded-[1rem] overflow-hidden group hover:shadow-lg transition-all duration-300 ring-1 ring-black/5 dark:ring-white/10">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container-low">
+<img alt="Symphony Portraits" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]" data-alt="High fashion portrait photography shoot in a modern concrete studio with dramatic rim lighting and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCOHH0eA9-V6BUXR-DszOcexTq9RSoSB-9AfChPgSFeVWQIWdpjE9yXj5Bes0SLIozVqKobvFKZFn3n-edCvXKhQmZv7JSvY4O7OM5BsPSnVLG_hExlqtPheb5BS2sKN0LPk8mU_rtz_owxkYOSEyHIPwR0P4qi8vsBQNxwLToDx17xxPipCJlW49eiRfomkWabEGELC9J5xL3uFxuzFZEEY926hJwNHOAId6LPw8DOGiu-VNOoJR53HGx0YiKIuv05mUHB8xHbEY"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-tertiary flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+                        Active
+                    </div>
+<button class="absolute top-4 right-4 bg-black/20 hover:bg-black/40 backdrop-blur-md text-white p-2 rounded-full transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate">Symphony Portraits</h3>
+</div>
+<div class="flex items-center gap-4 text-xs text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">photo_library</span> 42 Photos</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Expires in 3 days</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest text-on-surface rounded-lg py-2 text-sm font-medium hover:bg-surface-variant transition-colors">View</button>
+<button class="flex-1 bg-transparent text-primary border border-outline-variant/30 rounded-lg py-2 text-sm font-medium hover:bg-surface-container-low transition-colors">Share</button>
+</div>
+</div>
+</article>
+<!-- Gallery Card 3 (Expired) -->
+<article class="bg-surface-container-lowest rounded-[1rem] overflow-hidden group hover:shadow-lg transition-all duration-300 ring-1 ring-black/5 dark:ring-white/10 opacity-75">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container-low grayscale">
+<img alt="Autumn Lookbook '23" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]" data-alt="Cozy autumnal fashion lifestyle shots in a park setting with golden leaves and soft overcast diffuse lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6YzNGJ0w8RPmif2gUF-7QOTS9WhCR_mnKm0HxyjIjZ_1DbExndN2S3HwdL0xHZ-JMremK1_yed0XmtF4Ao6bCe97PFYIhv7FJXuFiVmZHVhOf8jTk0DbJug8_SKRQUHOCSFFrKvKDQPqDjVS8A_sxD2OXtHSrKSLhwujFO7hlfjmUxQH_QtuFXwu0k_fJxVsxC5HFc7sEgAbvRf8UwDUZ-6yMukLxDWhGPu4_SoZumD9iXds_DOwGkfxHmGzeas9iGz22MvyPFIs"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px]"></div>
+<div class="absolute top-4 left-4 bg-surface-variant/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                        Expired
+                    </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate">Autumn Lookbook '23</h3>
+</div>
+<div class="flex items-center gap-4 text-xs text-on-surface-variant mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">photo_library</span> 118 Photos</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">history</span> Expired Oct 12</span>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest text-on-surface rounded-lg py-2 text-sm font-medium hover:bg-surface-variant transition-colors">Reactivate</button>
+<button class="flex-1 bg-transparent text-error border border-error/30 rounded-lg py-2 text-sm font-medium hover:bg-error-container/20 transition-colors">Archive</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+</body></html>

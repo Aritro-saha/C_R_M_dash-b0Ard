@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Overview - The Gallery Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#006259",
+                        "on-tertiary-fixed": "#004e47",
+                        "outline-variant": "#a9b4b9",
+                        "error": "#9f403d",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-error": "#fff7f6",
+                        "on-error-container": "#752121",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-tint": "#545f73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed-dim": "#83efe1",
+                        "surface-container": "#e8eff3",
+                        "primary-fixed-dim": "#cad5ed",
+                        "primary-container": "#d8e3fb",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#e1e9ee",
+                        "primary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#314055",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-dim": "#cfdce3",
+                        "primary-dim": "#485367",
+                        "tertiary-dim": "#005e56",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-secondary": "#f7f9ff",
+                        "on-primary-container": "#475266",
+                        "outline": "#717c82",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#e2fff9",
+                        "tertiary-container": "#91feef",
+                        "secondary": "#506076",
+                        "inverse-primary": "#dae6fe",
+                        "tertiary": "#006b62",
+                        "on-primary": "#f6f7ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#006d64",
+                        "on-surface-variant": "#566166",
+                        "on-primary-fixed": "#354053",
+                        "tertiary-fixed": "#91feef",
+                        "error-container": "#fe8983",
+                        "secondary-dim": "#44546a",
+                        "on-surface": "#2a3439",
+                        "inverse-surface": "#0b0f10",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d3e4fe",
+                        "on-background": "#2a3439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[280px] z-50 bg-surface-container-low flex flex-col py-8 pl-6 pr-0 no-shadows hidden md:flex">
+<div class="mb-10 pr-6">
+<h1 class="font-headline font-extrabold text-lg text-on-surface tracking-tight">The Gallery Curator</h1>
+<p class="font-body text-xs text-on-surface-variant mt-1 uppercase tracking-widest">Admin Terminal</p>
+</div>
+<div class="flex-1 overflow-y-auto pr-6 space-y-1">
+<!-- Active: Overview -->
+<a class="bg-surface-container-lowest text-on-surface rounded-l-full relative before:content-[''] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-[3px] before:bg-primary before:rounded-r-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 text-primary" data-weight="fill">dashboard</span>
+                Overview
+            </a>
+<!-- Inactive Tabs -->
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 rounded-l-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors">photo_library</span>
+                Portfolio
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 rounded-l-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors">groups</span>
+                Client Galleries
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 rounded-l-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors">chat_bubble</span>
+                Messages
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 rounded-l-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors">payments</span>
+                Payments
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50 rounded-l-full flex items-center px-4 py-3 font-headline font-medium tracking-wide text-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors">edit_note</span>
+                Content
+            </a>
+</div>
+<div class="mt-auto pr-6 space-y-4 pt-6">
+<button class="w-full bg-gradient-to-b from-primary to-primary-dim text-on-primary rounded-xl py-3 px-4 font-headline font-medium text-sm hover:opacity-90 transition-opacity flex items-center justify-center shadow-[0_4px_12px_rgba(84,95,115,0.2)]">
+<span class="material-symbols-outlined mr-2 text-sm">cloud_upload</span>
+                Upload New Work
+            </button>
+<div class="space-y-1">
+<a class="text-on-surface-variant hover:text-on-surface flex items-center px-4 py-2 font-headline font-medium text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3 text-lg group-hover:text-primary transition-colors">help</span>
+                    Help Center
+                </a>
+<a class="text-on-surface-variant hover:text-on-surface flex items-center px-4 py-2 font-headline font-medium text-sm transition-colors group" href="#">
+<span class="material-symbols-outlined mr-3 text-lg group-hover:text-primary transition-colors">logout</span>
+                    Sign Out
+                </a>
+</div>
+<!-- Profile Snippet -->
+<div class="flex items-center px-4 pt-4 mt-2">
+<img alt="Photographer Profile" class="w-10 h-10 rounded-full object-cover mr-3 border-2 border-surface-container-lowest" data-alt="portrait of a professional photographer in a soft lit studio environment wearing a dark top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKfTWk9V2lppXwoISPIT1B90jpZ2bCtbUTk0UnvKLFXi-FXMpieKDrja6HNZvXhNR7wQGL1bitP9MAr4Neu8J4u-qVfYcdUkCQU-_A1PR4oUdqOxCX8cT_L4SOiqLMSjFxRNAPC-ZfEsVwfjvD2GebXRi30QjSizKXBn89zYlrWiuv-XFd6eMKwiLbOuTKKDn3dhXp2s0Xpmk1_zAee1p8JKQS98lOSYWLxFcKmNp4gXnyvDmaXVS3ahx64mr3ugnHwXgVa6HEtb8"/>
+<div>
+<p class="font-headline font-medium text-sm text-on-surface">Alex Mercer</p>
+<p class="font-body text-xs text-on-surface-variant">Lead Photographer</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="md:ml-[280px] min-h-screen pb-24">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 bg-surface/80 backdrop-blur-md h-16 flex justify-between items-center px-8">
+<div class="flex items-center flex-1">
+<!-- Mobile Menu Button -->
+<button class="md:hidden mr-4 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl py-2 pl-10 pr-4 font-body text-sm text-on-surface placeholder-on-surface-variant/70 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search galleries, clients, or transactions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full border-2 border-surface"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="pt-24 px-8 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Overview</h2>
+<p class="font-body text-on-surface-variant mt-2 text-sm">Welcome back, Alex. Here’s the status of your gallery.</p>
+</div>
+<div class="hidden sm:flex gap-3">
+<button class="bg-surface-container-highest text-on-surface rounded-xl px-4 py-2 font-headline font-medium text-sm flex items-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
+<!-- Total Galleries -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 relative overflow-hidden group hover:shadow-[0_12px_40px_-12px_rgba(84,95,115,0.15)] transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-8xl" data-weight="fill">collections</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">collections</span>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-xs font-semibold px-2 py-1 rounded-md flex items-center">
+<span class="material-symbols-outlined text-[10px] mr-1 text-tertiary">trending_up</span>
+                            +12%
+                        </span>
+</div>
+<div>
+<p class="font-body text-sm text-on-surface-variant font-medium mb-1">Total Galleries</p>
+<h3 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight">42</h3>
+</div>
+</div>
+<!-- Active Galleries -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 relative overflow-hidden group hover:shadow-[0_12px_40px_-12px_rgba(84,95,115,0.15)] transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-8xl" data-weight="fill">visibility</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+<div>
+<p class="font-body text-sm text-on-surface-variant font-medium mb-1">Active Galleries</p>
+<h3 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight flex items-baseline">
+                            15 <span class="text-sm font-medium text-on-surface-variant ml-2 tracking-normal">/ 42</span>
+</h3>
+</div>
+</div>
+<!-- Storage Used -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 relative overflow-hidden group hover:shadow-[0_12px_40px_-12px_rgba(84,95,115,0.15)] transition-all duration-500">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+<span class="text-on-surface-variant text-xs font-medium">1.5 TB Total</span>
+</div>
+<div>
+<p class="font-body text-sm text-on-surface-variant font-medium mb-1">Storage Used</p>
+<h3 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-3">75%</h3>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-3/4"></div>
+</div>
+</div>
+</div>
+<!-- Total Payments -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 relative overflow-hidden group hover:shadow-[0_12px_40px_-12px_rgba(84,95,115,0.15)] transition-all duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-8xl" data-weight="fill">payments</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<span class="bg-tertiary/10 text-tertiary text-xs font-semibold px-2 py-1 rounded-md flex items-center">
+<span class="material-symbols-outlined text-[10px] mr-1">trending_up</span>
+                            +8.5%
+                        </span>
+</div>
+<div>
+<p class="font-body text-sm text-on-surface-variant font-medium mb-1">Monthly Revenue</p>
+<h3 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight">$12.4k</h3>
+</div>
+</div>
+</div>
+<!-- Asymmetric Layout for Activity and Featured -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Activity Feed (Takes up 2/3) -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-3xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-xl font-bold text-on-surface tracking-tight">Recent Activity</h3>
+<a class="text-sm font-medium text-primary hover:text-primary-dim transition-colors" href="#">View All</a>
+</div>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-sm">add_photo_alternate</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-4 shadow-sm relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary rounded-l-2xl"></div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-semibold text-on-surface text-sm">Gallery Created</h4>
+<span class="font-body text-xs text-on-surface-variant">2h ago</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant"><span class="font-medium text-on-surface">Wedding - Smith Family</span> has been generated with 450 images.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-xs rounded-md text-on-surface-variant">Client: Sarah Smith</span>
+<span class="px-2 py-1 bg-surface-container-low text-xs rounded-md text-on-surface-variant">Draft</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-sm">update</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-4 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-semibold text-on-surface text-sm">Portfolio Update</h4>
+<span class="font-body text-xs text-on-surface-variant">5h ago</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant">New high-resolution assets uploaded to <span class="font-medium text-on-surface">Editorial Fashion SS24</span>.</p>
+<div class="mt-3 flex gap-2 overflow-hidden">
+<img alt="Fashion Editorial" class="w-12 h-12 rounded-lg object-cover shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]" data-alt="high fashion editorial shot of a model in a minimal modern setting with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDROMJtSNURNl-NfZ6GvYTjEiYROpMWkIML1vhdApRQcHIAX5EBZQ-_wYwFEY-gtRUFdNcs-PNfnIy9eCgPUy_jR9VBY_lbS5qDlslUvhjBh8n621UmfnowZ1wKcv9tq6kowbOfX00h8J2krLV1pFP2BitBmUZco-Iq22NfzCQWZwW2XLaQQZ-6kj61tagmjeQ089Fju7FaBH9bjt2Dlz6S9YRc3ixykaZ6zsLQyx6-_x_R9AAjTLKlg5saUh_k1szGIzhAXtE-r1A"/>
+<img alt="Fashion Editorial 2" class="w-12 h-12 rounded-lg object-cover shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]" data-alt="close up of fashion model wearing designer sunglasses with stark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp1TT44AXKp-o6j8TbA_f2KcHPutRufooEsK6tYXbEs_JLa_XrL1wKyxNQRHkiyOhJw6ycd7mh2xs80y1CIFKW1XGLZ2bq27hc0_2rwdA0KkGGLFPumhAycpLVbm74yab1ftZ6roQL9vgE-r19OR0pdMSJ5zbRsTyq11WGyur1xoetoy1AdXBeOxxLFqAyrZGXhNfCyBDueSqDeQ6sv2hSRFIbCCcgSysBhfhFuCIuQFw4LgDKVlu50FUWHVcui_kyJ7c2nA0iOYs"/>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-xs font-medium text-on-surface-variant">+12</div>
+</div>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-sm">payments</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-2xl p-4 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-semibold text-on-surface text-sm">Payment Received</h4>
+<span class="font-body text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Final installment of <span class="font-medium text-on-surface">$1,200.00</span> received for Corporate Headshots.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured / Storage Callout (Takes up 1/3) -->
+<div class="flex flex-col gap-6">
+<!-- Mini Profile / Storage Widget -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_4px_24px_-12px_rgba(84,95,115,0.1)]">
+<h3 class="font-headline text-lg font-bold text-on-surface mb-6 tracking-tight">System Status</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="font-body text-on-surface-variant">Bandwidth</span>
+<span class="font-headline font-semibold text-on-surface">420 GB / 1 TB</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full rounded-full w-[42%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="font-body text-on-surface-variant">Storage</span>
+<span class="font-headline font-semibold text-on-surface">1.5 TB / 2 TB</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full w-[75%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 bg-surface border border-outline-variant/20 text-on-surface rounded-xl py-2 font-headline font-medium text-sm hover:bg-surface-container-low transition-colors">
+                            Upgrade Plan
+                        </button>
+</div>
+<!-- Quick Actions Glass Card -->
+<div class="bg-surface-container-low rounded-3xl p-6 flex-1 flex flex-col relative overflow-hidden">
+<!-- Decorative gradient blob -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-4 tracking-tight z-10">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-3 z-10">
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-white hover:shadow-sm transition-all group border border-transparent hover:border-outline-variant/10">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">add_a_photo</span>
+<span class="font-headline text-xs font-medium text-on-surface">New Session</span>
+</button>
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-white hover:shadow-sm transition-all group border border-transparent hover:border-outline-variant/10">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">person_add</span>
+<span class="font-headline text-xs font-medium text-on-surface">Add Client</span>
+</button>
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-white hover:shadow-sm transition-all group border border-transparent hover:border-outline-variant/10">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">send</span>
+<span class="font-headline text-xs font-medium text-on-surface">Send Invoice</span>
+</button>
+<button class="bg-surface-container-lowest p-4 rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-white hover:shadow-sm transition-all group border border-transparent hover:border-outline-variant/10">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">water_drop</span>
+<span class="font-headline text-xs font-medium text-on-surface">Watermarks</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

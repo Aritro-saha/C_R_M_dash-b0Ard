@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery Curator - Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#006259",
+                        "on-tertiary-fixed": "#004e47",
+                        "outline-variant": "#a9b4b9",
+                        "error": "#9f403d",
+                        "inverse-on-surface": "#9a9d9f",
+                        "on-error": "#fff7f6",
+                        "on-error-container": "#752121",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-tint": "#545f73",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "tertiary-fixed-dim": "#83efe1",
+                        "surface-container": "#e8eff3",
+                        "primary-fixed-dim": "#cad5ed",
+                        "primary-container": "#d8e3fb",
+                        "surface-variant": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "surface-container-high": "#e1e9ee",
+                        "primary": "#545f73",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#314055",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-dim": "#cfdce3",
+                        "primary-dim": "#485367",
+                        "tertiary-dim": "#005e56",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-secondary": "#f7f9ff",
+                        "on-primary-container": "#475266",
+                        "outline": "#717c82",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#e2fff9",
+                        "tertiary-container": "#91feef",
+                        "secondary": "#506076",
+                        "inverse-primary": "#dae6fe",
+                        "tertiary": "#006b62",
+                        "on-primary": "#f6f7ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#006d64",
+                        "on-surface-variant": "#566166",
+                        "on-primary-fixed": "#354053",
+                        "tertiary-fixed": "#91feef",
+                        "error-container": "#fe8983",
+                        "secondary-dim": "#44546a",
+                        "on-surface": "#2a3439",
+                        "inverse-surface": "#0b0f10",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d3e4fe",
+                        "on-background": "#2a3439"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-screen w-[280px] z-50 bg-surface-container-low text-on-surface font-label font-medium tracking-wide text-sm flex flex-col py-8 pl-6 pr-0 transition-all duration-300 ease-in-out hidden md:flex">
+<div class="mb-12 pr-6">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Studio Logo" class="w-full h-full object-cover" data-alt="minimalist photography studio logo on light textured paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSp0mhyxA7UYOmn4AKnvmXhM3lmhKuRjXyafMxi3GydxDfKMgp8mxEE7px4-dfBUfseQeH0KkSqFBcvP9F2Oz7UptLgnmMJDh52yqsmvsX1z2DUuC7G8rHrU0YaOXfIt7FwRMaPD9kBs7nHf_Xe7hfFvIV8k8Y-xL2HKtbOwClGKOJnj5zRe_X3Gw02_aWq4X_h_a2nFyeYyEpqC4EoOb_Txzl2iDM3LRTUTYJ43N3fK0v-NagHGsChYHwizNZ0HwFXoFqiohmmD4"/>
+</div>
+<div>
+<h1 class="font-headline font-extrabold text-lg text-on-surface tracking-tight leading-tight">The Gallery Curator</h1>
+<p class="text-xs text-on-surface-variant font-normal">Admin Terminal</p>
+</div>
+</div>
+</div>
+<button class="mr-6 mb-8 px-4 py-3 rounded-md bg-gradient-to-b from-primary to-primary-dim text-on-primary font-medium text-sm shadow-[0_4px_12px_rgba(84,95,115,0.2)] hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+            Upload New Work
+        </button>
+<div class="flex-1 flex flex-col gap-1 overflow-y-auto pr-0">
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-l-full transition-colors mr-6" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Overview
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-l-full transition-colors mr-6" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+                Portfolio
+            </a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-lowest text-on-surface rounded-l-full relative before:content-[''] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-primary before:rounded-r-full shadow-[0_4px_32px_rgba(11,15,16,0.02)]" href="#">
+<span class="material-symbols-outlined filled text-[20px] text-primary">groups</span>
+                Client Galleries
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-l-full transition-colors mr-6" href="#">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                Messages
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-l-full transition-colors mr-6" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                Payments
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-l-full transition-colors mr-6" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+                Content
+            </a>
+</div>
+<div class="mt-auto pr-6 flex flex-col gap-1 pt-8">
+<a class="flex items-center gap-3 px-4 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/40 rounded-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[280px] min-h-screen px-8 py-12 lg:px-16 lg:py-16 max-w-7xl mx-auto">
+<!-- Context & Header -->
+<header class="mb-10">
+<a class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary-dim transition-colors mb-4 group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                Back to All Galleries
+            </a>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tighter mb-2">The Smith Wedding</h1>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        Last updated 2 hours ago by Editor
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-md bg-surface-container-highest text-error font-medium text-sm flex items-center gap-2 hover:bg-error-container hover:text-on-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                        Delete Collection
+                    </button>
+<button class="px-6 py-2 rounded-md bg-gradient-to-b from-primary to-primary-dim text-on-primary font-medium text-sm shadow-[0_4px_12px_rgba(84,95,115,0.2)] hover:opacity-90 transition-opacity">
+                        Save Changes
+                    </button>
+</div>
+</div>
+</header>
+<!-- Settings Bar (Tonal Layering, no lines) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 mb-12 shadow-[0_8px_32px_rgba(11,15,16,0.03)] flex flex-col md:flex-row gap-8 lg:gap-12 relative overflow-hidden">
+<!-- Decorative gradient subtle accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary-container to-surface-container-lowest opacity-50"></div>
+<div class="flex-1">
+<label class="block font-label text-xs font-semibold uppercase tracking-[0.05em] text-on-surface-variant mb-2.5">Client Access PIN</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline-variant text-[20px] group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full bg-surface border border-outline-variant/20 rounded-md py-2.5 pl-11 pr-4 text-on-surface font-medium focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all shadow-sm" type="text" value="8492"/>
+</div>
+</div>
+<div class="flex-1">
+<label class="block font-label text-xs font-semibold uppercase tracking-[0.05em] text-on-surface-variant mb-2.5">Gallery Expiry</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline-variant text-[20px] group-focus-within:text-primary transition-colors">event</span>
+<input class="w-full bg-surface border border-outline-variant/20 rounded-md py-2.5 pl-11 pr-4 text-on-surface font-medium focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all shadow-sm text-sm" type="date" value="2024-12-31"/>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center border-t md:border-t-0 md:border-l border-outline-variant/10 pt-6 md:pt-0 md:pl-8 lg:pl-12">
+<label class="block font-label text-xs font-semibold uppercase tracking-[0.05em] text-on-surface-variant mb-2">Live Status</label>
+<div class="flex items-center gap-2.5">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-20"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary"></span>
+</span>
+<span class="text-sm font-medium text-on-surface">Published &amp; Visible</span>
+</div>
+</div>
+</section>
+<!-- Image Grid Section -->
+<section>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Curated Exhibition</h2>
+<p class="text-sm text-on-surface-variant mt-1">42 total items • 1.2 GB</p>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="List View" class="px-3 py-2 rounded-md text-on-surface-variant hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+<button aria-label="Grid View" class="px-3 py-2 rounded-md bg-surface-container-lowest shadow-sm text-primary flex items-center justify-center">
+<span class="material-symbols-outlined filled">grid_view</span>
+</button>
+<div class="w-px h-6 bg-outline-variant/20 mx-2"></div>
+<button class="px-5 py-2.5 rounded-md bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-medium text-sm flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_photo_alternate</span> 
+                        Add Photos
+                    </button>
+</div>
+</div>
+<!-- Bento/Asymmetric Feeling Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+<!-- Image Card 1 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low shadow-[0_2px_8px_rgba(11,15,16,0.02)]">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 z-10 pointer-events-none rounded-xl"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close up of bride and groom holding hands with wedding rings visible soft natural lighting elegant mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzxhNHhuOVF2bhZHfywG0AEKcD6IK7gd4uvN_Rx8sZ0Dw6kIfSI-LU70kPYz4DD_VpXET1y4rC9K5BKyEH0ykqUh8_rPrEjexTR6BF4G1xWzWHyLgLgp6ok_gZPRupKVx5Zpce7N4BG6nl5YH5r95d4HzHbdR6fKzJlLGfzjk1gjGIj1OQt4P2Yjjl1iFr1-KiKHZjSKYWpIgFogSNpqUaioFXqrO9NVCNIiK-QN3Sg-ZfoJze9X-9eXKNxLapc-TBud4QEv_1Tc0"/>
+<!-- Hover Controls (Glassmorphism) -->
+<div class="absolute inset-0 bg-surface-variant/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-20">
+<div class="flex justify-between items-start">
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm cursor-grab active:cursor-grabbing">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface-variant flex items-center justify-center hover:bg-error-container hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest/85 px-3 py-2 rounded-md self-start backdrop-blur-md shadow-sm border border-white/20">
+<span class="text-xs font-medium text-on-surface">SMITH_001.jpg</span>
+</div>
+</div>
+</div>
+<!-- Image Card 2 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low shadow-[0_2px_8px_rgba(11,15,16,0.02)]">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 z-10 pointer-events-none rounded-xl"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="elegant table setting at wedding reception with white floral centerpieces and crystal glasses warm ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY_dGFPY7But8_E3q4Ck2rEuhs2JLxDT7XpwToOEpr0VPWnA2eaI7IIrnMzXLgCmFhgH8P4W1K0uTn7-omwJJw1kmi8SzCZBiBK_hLBfHoJYbKbqXVbTDx8WOBK-oyS6E9W6_fDvCEa0rZd9sRXbFM526_WG29yiDmAVvth1BNtoRhBoRBVGE1LV8vTYrZWM4I1k1eUtrI8ylAP9e1awicu0LM-vlOQ9XXSWcjihqmhaJMwa3OJxCPyL7H1CWhIesQ0O18VO8e6h8"/>
+<div class="absolute inset-0 bg-surface-variant/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-20">
+<div class="flex justify-between items-start">
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm cursor-grab active:cursor-grabbing">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface-variant flex items-center justify-center hover:bg-error-container hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest/85 px-3 py-2 rounded-md self-start backdrop-blur-md shadow-sm border border-white/20">
+<span class="text-xs font-medium text-on-surface">SMITH_002.jpg</span>
+</div>
+</div>
+</div>
+<!-- Image Card 3 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low shadow-[0_2px_8px_rgba(11,15,16,0.02)]">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 z-10 pointer-events-none rounded-xl"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="candid shot of bride laughing while holding champagne glass outdoors during golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf0sLXV7q1wObKciWsIsVTP_gcwL8o5fazMT-t06gMRkEXDnTnb9ULGo9ziWhDehvorTmeMK78eNniqy9siC6UzVoToH75mlAVTcOQ2X1B6nR87BjsXiHZ3jyPEeiJixB94zow6ARmzfg_t1JH1W6meVicLUM-j9hdInco4D0TR5c1EAUFGUCTLTir3PTpopS-CgslVRSsTVisdtBMAjyy_c7xfRFFQ_bEKmCAEevqDMSPgMhtdct-STOmxD80tU2SAEpeuq5koTU"/>
+<div class="absolute inset-0 bg-surface-variant/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-20">
+<div class="flex justify-between items-start">
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm cursor-grab active:cursor-grabbing">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface-variant flex items-center justify-center hover:bg-error-container hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest/85 px-3 py-2 rounded-md self-start backdrop-blur-md shadow-sm border border-white/20">
+<span class="text-xs font-medium text-on-surface">SMITH_003.jpg</span>
+</div>
+</div>
+</div>
+<!-- Image Card 4 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low shadow-[0_2px_8px_rgba(11,15,16,0.02)]">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 z-10 pointer-events-none rounded-xl"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="black and white portrait of groom adjusting his bowtie standing in front of window soft side light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgyCT1wNzDTwxHxDL-PRAhmokeQ2B_r7KsCSuhE1GDrVHqXyTFbAbGVH-SBJFUlW3iqrylksr-vSvhVK-HrXNTsr2iS-D4Tr2X3ArRstMdyk3tmKzBsFqlAVpRGSmgU337uSQrjxSCWGi7JQ2oTLvFGfoDJKhXe7zB4UYTLj-4EhAu_pTOaS6PN7QmpJUOEmvS9w1rh0zq8b3V245VbZuqV9ZjfSU1_iUBLCYX6ln4gVfwUJ95vJ-9z1eYwlE2X8h8oKxEyB9j7dE"/>
+<div class="absolute inset-0 bg-surface-variant/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-20">
+<div class="flex justify-between items-start">
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface flex items-center justify-center hover:text-primary transition-colors shadow-sm cursor-grab active:cursor-grabbing">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<button class="w-9 h-9 rounded-md bg-surface-container-lowest/90 text-on-surface-variant flex items-center justify-center hover:bg-error-container hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest/85 px-3 py-2 rounded-md self-start backdrop-blur-md shadow-sm border border-white/20">
+<span class="text-xs font-medium text-on-surface">SMITH_004.jpg</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>
